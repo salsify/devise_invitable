@@ -15,7 +15,7 @@ group :test do
     gem "bson_ext", "~> 1.3"
   end
 
-  gem 'activerecord', '~> 4.0.0.beta'
+  gem 'activerecord', '~> 4.0.0.rc1'
   gem "mongoid", :github => "mongoid/mongoid", :branch => "master"
   gem "capybara", "~> 1.1.0"
   gem 'shoulda', '~> 2.11.3'
