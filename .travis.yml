@@ -13,5 +13,3 @@ services:
 matrix:
   allow_failures:
     - rvm: jruby
-    - rvm: rbx-19mode
-    - rvm: 2.0.0
