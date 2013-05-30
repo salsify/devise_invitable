@@ -131,8 +131,8 @@ module Devise
         self.invited_by = invited_by if invited_by
 
         # Call these before_validate methods since we aren't validating on save
-        self.downcase_keys if self.new_record? && self.respond_to?(:downcase_keys)
-        self.strip_whitespace if self.new_record? && self.respond_to?(:strip_whitespace)
+        self.downcase_keys if self.new_record? && self.respond_to?(:downcase_keys, true)
+        self.strip_whitespace if self.new_record? && self.respond_to?(:strip_whitespace, true)
 
         if save(:validate => false)
           self.invited_by.decrement_invitation_limit! if !was_invited and self.invited_by.present?
