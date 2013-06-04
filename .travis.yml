@@ -10,6 +10,3 @@ env:
   - DEVISE_ORM=mongoid
 services:
   - mongodb
-matrix:
-  allow_failures:
-    - rvm: jruby
