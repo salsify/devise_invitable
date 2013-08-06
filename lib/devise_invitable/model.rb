@@ -271,6 +271,7 @@ module Devise
         # Attributes must contain invitation_token, password and confirmation
         def accept_invitation!(attributes={})
           invitable = find_or_initialize_with_error_by(:invitation_token, attributes.delete(:invitation_token))
+          puts "#{invitable.invitation_token} #{invitable.persisted?} #{!invitable.valid_invitation?}"
           invitable.errors.add(:invitation_token, :invalid) if invitable.invitation_token && invitable.persisted? && !invitable.valid_invitation?
           if invitable.errors.empty?
             invitable.assign_attributes(attributes)
