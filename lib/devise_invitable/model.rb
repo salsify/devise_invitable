@@ -81,6 +81,8 @@ module Devise
       # Accept an invitation by clearing invitation token and and setting invitation_accepted_at
       # Saves the model and confirms it if model is confirmable, running invitation_accepted callbacks
       def accept_invitation!
+        puts "#{self.invited_to_sign_up?} : #{self.valid?}"
+
         if self.invited_to_sign_up? && self.valid?
           run_callbacks :invitation_accepted do
             self.accept_invitation
